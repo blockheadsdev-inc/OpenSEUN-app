@@ -19,7 +19,7 @@ class _ImportInvestorWalletScreenState
       drawer: MenuDrawer(),
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Create Investor Wallet -'),
+        title: const Text('Create Investor Wallet'),
       ),
       body: SingleChildScrollView(
         child: Column(

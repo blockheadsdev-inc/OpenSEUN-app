@@ -52,7 +52,7 @@ class MenuDrawer extends StatelessWidget {
                   },
                 ),
                 ListTile(
-                  title: const Text('Import Project Wallet -'),
+                  title: const Text('Import Project Wallet'),
                   onTap: () {
                     Navigator.pushReplacement(
                         context,
