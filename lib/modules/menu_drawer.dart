@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:openseun/pages/investor/create_investor_screen.dart';
+import 'package:openseun/pages/project/create_project_screen.dart';
 
-import '../pages/import_wallet_screen.dart';
-import '../pages/projects_screen.dart';
+import '../pages/investor/wallet/import_investor_wallet_by_id_screen.dart';
+import '../pages/investor/wallet/import_investor_wallet_screen.dart';
+import '../pages/project/wallet/import_project_wallet_by_id_screen.dart';
+import '../pages/project/wallet/import_project_wallet_screen.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({Key? key}) : super(key: key);
@@ -28,44 +32,97 @@ class MenuDrawer extends StatelessWidget {
                 // decoration: ,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (_) => ProjectsScreen()));
-              },
-              child: const ListTile(
-                title: Text('Projects'),
-              ),
+            ListTile(
+              title: const Text('Getting Started'),
+              onTap: () {},
+            ),
+            ExpansionTile(
+              title: const Text('Investor'),
+              children: [
+                ListTile(
+                  title: const Text('Create Investor'),
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => CreateInvestorScreen()));
+                  },
+                ),
+                ListTile(
+                  title: const Text('Import Project Wallet -'),
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => ImportInvestorWalletScreen()));
+                  },
+                ),
+                ListTile(
+                  title: const Text('Recover Investor Wallet'),
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => ImportInvestorWalletByIdScreen()));
+                  },
+                )
+              ],
+            ),
+            ExpansionTile(
+              title: const Text('Projects'),
+              children: [
+                ListTile(
+                  title: const Text('Import Project Wallet'),
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => ImportProjectWalletScreen()));
+                  },
+                ),
+                ListTile(
+                  title: const Text('Recover Project Wallet'),
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => ImportProjectWalletByIdScreen()));
+                  },
+                ),
+                ListTile(
+                  title: const Text('Project Wallet'),
+                  onTap: () {},
+                ),
+                ListTile(
+                  title: const Text('New Project'),
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => CreateProjectScreen()));
+                  },
+                ),
+                ListTile(
+                  title: const Text('My Projects'),
+                  onTap: () {},
+                ),
+              ],
             ),
             const Divider(
-              thickness: 2,
+              indent: 10.0,
+              endIndent: 150,
+              thickness: 1,
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (_) => ImportWalletFromId()));
-              },
-              child: const ListTile(
-                title: Text('Wallet'),
-              ),
+            ListTile(
+              title: const Text('FAQ'),
+              onTap: () {},
             ),
-            const Divider(
-              thickness: 2,
-            ),
-            GestureDetector(
-              onTap: () {
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (_) => ImportWalletFromId()));
-              },
-              child: const ListTile(
-                title: Text('Investor'),
-              ),
-            ),
-            const Divider(
-              thickness: 2,
+            ListTile(
+              title: const Text('Help'),
+              onTap: () {},
             ),
           ],
         ),

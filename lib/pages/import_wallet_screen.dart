@@ -56,7 +56,7 @@ class _ImportWalletFromIdState extends State<ImportWalletFromId> {
       drawer: MenuDrawer(),
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Clear Water Projects'),
+        title: const Text('Import Wallet'),
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 20, left: 8.0, right: 8.0),
